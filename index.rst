@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to its_safe_house_cookbook's documentation!
+Welcome to its_safe_house's cookbook!
 ===================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    basic_security_tutorial/index
