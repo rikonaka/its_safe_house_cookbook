@@ -23,7 +23,7 @@ def setup(app):
         'url_resolver': lambda url: github_doc_root + url,
         'auto_toc_tree_section': 'Contents',
     }, True)
-    app.add_transfrom(AutoStructify)
+    app.add_transform(AutoStructify)
 
 source_parsers = {
     '.md': CommonMarkParser,
