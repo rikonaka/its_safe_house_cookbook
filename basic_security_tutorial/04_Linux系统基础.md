@@ -2,7 +2,7 @@
 
 ## 历史
 
-UNIX操作系统，是美国AT&T公司贝尔实验室于1969年完成的操作系统。最早由肯·汤普逊（Ken Thompson），丹尼斯·里奇（Dennis Ritchie），道格拉斯·麦克罗伊（Douglas McIlroy），和乔伊·欧桑纳于1969年在AT&T贝尔实验室开发。于1971年首次发布，最初是完全用汇编语言编写。后来，在1973年用一个重要的开拓性的方法，Unix被丹尼斯·里奇用编程语言C（内核和I/O例外）重新编写。高级语言编写的操作系统具有更佳的兼容性，能更容易地移植到不同的计算机平台。
+[UNIX](https://zh.wikipedia.org/zh-hans/UNIX)操作系统，是美国AT&T公司贝尔实验室于1969年完成的操作系统。最早由肯·汤普逊（Ken Thompson），丹尼斯·里奇（Dennis Ritchie），道格拉斯·麦克罗伊（Douglas McIlroy），和乔伊·欧桑纳于1969年在AT&T贝尔实验室开发。于1971年首次发布，最初是完全用汇编语言编写。后来，在1973年用一个重要的开拓性的方法，Unix被丹尼斯·里奇用编程语言C（内核和I/O例外）重新编写。高级语言编写的操作系统具有更佳的兼容性，能更容易地移植到不同的计算机平台。
 
 1983年，理查德·马修·斯托曼创立GNU计划。这个计划有一个目标，是为了发展一个完全自由的类Unix操作系统。自1984年发起这个计划以来，在1985年，理查德·马修·斯托曼发起自由软件基金会并且在1989年撰写GPL。1990年代早期，GNU开始大量地产生或收集各种系统所必备的组件，像是——库、编译器、调试工具、文本编辑器，以及一个Unix的用户界面（Unix shell）。
 
@@ -18,31 +18,31 @@ MINIX是一个轻量小型并采用微内核(Micro-Kernel)架构的类Unix操作
 
 ## Linux系统的安装
 
-这里推荐使用**VirtualBox**这个虚拟化软件，支持在Windows，Linux和MacOS上安装。
+这里推荐使用**VirtualBox**，支持在Windows、Linux和MacOS上安装。
 
 从[官网](https://www.virtualbox.org/)下载VirtualBox之后，然后我们安装并打开软件。
 
-![virtualbox](images/linux_1.png)
+![start](images/linux_1.png "start")
 
 点击**New**创建一个虚拟机。
 
-![new](images/linux_2.png)
+![create](images/linux_2.png "create")
 
 之后输入虚拟机的名字，调整虚拟机的类型，之后点击**Next**。
 
-![create](images/linux_3.png)
+![create](images/linux_3.png "create")
 
 之后调整虚拟机的内存大小，这里建议如果只是用作**Web测试服务器**或**靶机**如**centos**和**redhat**等等，可以调整为**1024MB**左右即可，若打算用作桌面如**ubuntu**和**kali**等发行版，可以稍微往上调整一点到**2048MB**或者**4096MB**。
 
-![create](images/linux_4.png)
+![create](images/linux_4.png "create")
 
 之后我们选择默认选项创建新磁盘，如果你有旧的磁盘打算导入，这里可以选择第三个。
 
-![create](images/linux_5.png)
+![create](images/linux_5.png "create")
 
 之后选择磁盘类型，这里我们保持VirtualBox的默认磁盘类型**VDI**就可以，**VMDK**为**VMware**的默认磁盘类型，不用担心未来导入**ESXI**或者**KVM**有困难，现在这几种磁盘格式是可以相互转换的，这里为了使用VirtualBox的最优性能，我们保持默认选择VDI。
 
-![create](images/linux_6.png)
+![create](images/linux_6.png "create")
 
 这里我们保持默认，选择动态调整磁盘，动态调整磁盘中虚拟机使用了多少，物理机上就占用多少，虚拟机要新增空间的时候，VirtualBox才会分配空间，直到虚拟机的空间等于虚拟机最大可支配的空间。
 
@@ -50,51 +50,51 @@ MINIX是一个轻量小型并采用微内核(Micro-Kernel)架构的类Unix操作
 
 第二种模式，就是一次性分配完虚拟机的最大可支配容量，这种模式的缺点就是占用空间大，但是IO性能好。
 
-![create](images/linux_7.png)
+![create](images/linux_7.png "create")
 
 之后就是设置一下虚拟机文件存放位置和磁盘容量。
 
-![create](images/linux_8.png)
+![create](images/linux_8.png "create")
 
 然后我们的虚拟机就创建好了。之后就是安装操作系统。
 
 我们选择刚刚创建的虚拟机并点击**Start**。
 
-![create](images/linux_2.png)
+![create](images/linux_2.png "create")
 
 这时候会跳出这个窗口，这个窗口只会在虚拟机生命周期里面你的第一次点击Start才会出现。如果你误关闭了这个窗口，我们可以从设置那里挂载**.iso**文件上去，这步我们下面再说。
 
-![install](images/linux_9.png)
+![install](images/linux_9.png "install")
 
 然后就是点击右侧小文件夹选择系统ISO文件
 
 这里VirtualBox做了一个改变，以前的版本就会跳转到文件选择窗口，新版本的这里就多了一个磁盘选择器。
 
-![install](images/linux_10.png)
+![install](images/linux_10.png "install")
 
 第一次安装的同学这里是不会有任何磁盘的，这时候我们点击**Add**添加一个磁盘。然后就选择你想要安装的操作系统的.iso文件。
 
 之后就会回到刚刚那个界面，我们这时候选中刚刚添加的.iso文件，点击**Choose**，然后就是点击**Start**，VirtualBox就会开始按照系统了。
 
-![install](images/linux_11.png)
+![install](images/linux_11.png "install")
 
 之后按照一般步骤去安装就完了。
 
-![install](images/linux_12.png)
+![install](images/linux_12.png "install")
 
 如果安装步骤没跳出.iso文件选择界面，我们可以选中虚拟机，然后打开**Setting**。
 
-![install](images/linux_2.png)
+![install](images/linux_2.png "install")
 
 选择**Storage**，就可以看到右边有个**Controller:IDE**的东西，然后我们点击Controller:IDE后面两个小按钮的第一个，就会跳出.iso文件选择窗口。
 
-![install](images/linux_13.png)
+![install](images/linux_13.png "install")
 
 如果是桌面版的Linux，安装完成之后可以安装VritualBox的客户端增强工具，找到**Devices**之后，选择最后一个**Insert Guest Additions CD image...**。
 
 这里做演示的是一台没有桌面环境的centos8，ubuntu和kali等操作系统可以类推。
 
-![addition](images/linux_14.png)
+![addition](images/linux_14.png "install")
 
 然后我们挂载**cdrom**到**mnt**上，之后运行VirtualBox提供的程序就可安装。
 
@@ -104,7 +104,7 @@ cd /mnt
 ./VBoxLinuxAdditions.run
 ```
 
-![addition](images/linux_15.png)
+![addition](images/linux_15.png "addition")
 
 不过一般来说，安装时候都会出现缺一个叫**kernel-headers**程序的错误，在ubuntu和kali中不叫这个名字。
 
@@ -131,9 +131,9 @@ dnf install dkms kernel-devel kernel-headers gcc make bzip2 perl
 
 之后重启虚拟机就可以了。
 
-![addition](images/linux_16.png)
+![addition](images/linux_16.png "addition")
 
-![addition](images/linux_17.png)
+![addition](images/linux_17.png "addition")
 
 ## Linux系统远程管理工具
 
